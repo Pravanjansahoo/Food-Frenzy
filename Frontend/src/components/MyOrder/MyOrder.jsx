@@ -23,12 +23,15 @@ const MyOrder = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/orders", {
-          params: { email: user?.email },
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("authToken")}`,
-          },
-        });
+        const response = await axios.get(
+          "https://food-frenzy-backend.onrender.com/api/orders",
+          {
+            params: { email: user?.email },
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+            },
+          }
+        );
         // formated data
         const formattedOrders = response.data.map((order) => ({
           ...order,
@@ -237,7 +240,7 @@ const MyOrder = () => {
                                       : item.item.imageUrl.startsWith(
                                           "/uploads/"
                                         )
-                                      ? `http://localhost:4000${item.item.imageUrl}`
+                                      ? `https://food-frenzy-backend.onrender.com${item.item.imageUrl}`
                                       : item.item.imageUrl
                                   }
                                   alt={item.item?.name || "item"}

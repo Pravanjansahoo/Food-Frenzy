@@ -18,7 +18,7 @@ const Order = () => {
     const fetchOrders = async () => {
       try {
           const response = await axios.get(
-          "http://localhost:4000/api/orders/getall",
+          "https://food-frenzy-backend.onrender.com/api/orders/getall",
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("authToken")}`,
@@ -61,7 +61,7 @@ const Order = () => {
   const handleStatusChange = async (orderId, newStatus) => {
     try {
       await axios.put(
-        `http://localhost:4000/api/orders/getall/${orderId}`,
+        `https://food-frenzy-backend.onrender.com/api/orders/getall/${orderId}`,
         { status: newStatus },
         {
           headers: {
@@ -203,9 +203,9 @@ const Order = () => {
                                     const imageSrc = rawImage.startsWith("http")
                                       ? rawImage
                                       : rawImage.startsWith("/uploads/")
-                                        ? `http://localhost:4000${rawImage}`
+                                        ? `https://food-frenzy-backend.onrender.com${rawImage}`
                                         : rawImage.startsWith("uploads/")
-                                          ? `http://localhost:4000/${rawImage}`
+                                          ? `https://food-frenzy-backend.onrender.com/${rawImage}`
                                           : rawImage.startsWith("/src/assets/")
                                             ? `http://localhost:5173${rawImage}`
                                             : rawImage.startsWith("src/assets/")
@@ -214,7 +214,7 @@ const Order = () => {
                                                 ? `http://localhost:5173${rawImage}`
                                                 : rawImage.startsWith("assets/")
                                                   ? `http://localhost:5173/${rawImage}`
-                                                  : `http://localhost:4000/uploads/${rawImage}`;
+                                                  : `https://food-frenzy-backend.onrender.com/uploads/${rawImage}`;
                                     return imageSrc ? (
                                       <img
                                         src={imageSrc}

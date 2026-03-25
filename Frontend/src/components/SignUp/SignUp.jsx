@@ -10,7 +10,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const url = "http://localhost:4000";
+const url = "https://food-frenzy-backend.onrender.com";
 
 const AwesomeToast = ({ message, icon }) => (
   <div className="animate-slide-in bottom-6 right-6 flex items-center bg-linear-to-br from-amber-500 to-amber-600 px-6 py-4 rounded-lg shadow-lg border-2 border-amber-300/20 ">

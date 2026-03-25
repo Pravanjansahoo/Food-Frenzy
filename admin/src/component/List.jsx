@@ -12,7 +12,7 @@ const List = () => {
     const fetchItem = async () => {
       setError("");
       try {
-        const { data } = await axios.get("http://localhost:4000/api/items");
+        const { data } = await axios.get("https://food-frenzy-backend.onrender.com/api/items");
         setItems(data);
       } catch (err) {
         console.error("ERROR FETCHING items", err);
@@ -33,7 +33,7 @@ const List = () => {
   const handleDelete = async (itemId) => {
     if (!window.confirm("Are You sure you want to delete this item?")) return;
     try {
-      await axios.delete(`http://localhost:4000/api/items/${itemId}`);
+      await axios.delete(`https://food-frenzy-backend.onrender.com/api/items/${itemId}`);
       setItems((pre) => pre.filter((item) => item._id !== itemId));
       console.log("Deleted item Id ", itemId);
     } catch (err) {

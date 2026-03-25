@@ -32,7 +32,7 @@ const OurHomeMenu = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/api/items")
+      .get("https://food-frenzy-backend.onrender.com/api/items")
       .then((res) => {
         const items = Array.isArray(res.data) ? res.data : [];
         const grouped = items.reduce((acc, item) => {

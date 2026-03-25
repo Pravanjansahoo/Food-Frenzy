@@ -32,7 +32,7 @@ const verifyPaymentPage = () => {
     // STROPE SUCCESS TRUE
 
     axios
-      .get("http://localhost:4000/api/orders/confirm", {
+      .get("https://food-frenzy-backend.onrender.com/api/orders/confirm", {
         params: { session_id },
         headers: authHeaders,
       })

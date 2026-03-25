@@ -103,7 +103,7 @@ export const CartProvider = ({ children }) => {
     const token = localStorage.getItem("authToken");
     if (!token) return;
     axios
-      .get("http://localhost:4000/api/cart", {
+      .get("https://food-frenzy-backend.onrender.com/api/cart", {
         withCredentials: true,
         headers: { Authorization: `Bearer ${token}` },
       })
@@ -168,7 +168,7 @@ export const CartProvider = ({ children }) => {
     }
 
     const res = await axios.post(
-      "http://localhost:4000/api/cart",
+      "https://food-frenzy-backend.onrender.com/api/cart",
       { itemId, quantity },
       {
         withCredentials: true,
@@ -190,15 +190,15 @@ export const CartProvider = ({ children }) => {
         return;
       }
 
-    const token = localStorage.getItem("authToken");
-    await axios.delete(
-        `http://localhost:4000/api/cart/${entry._id}`,
+      const token = localStorage.getItem("authToken");
+      await axios.delete(
+        `https://food-frenzy-backend.onrender.com/api/cart/${entry._id}`,
 
-      {
-        withCredentials: true,
-        headers: { Authorization: `Bearer ${token}` },
-      }
-    );
+        {
+          withCredentials: true,
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
 
       dispatch({ type: "REMOVE_ITEM", payload: entry.id });
     },
@@ -224,15 +224,15 @@ export const CartProvider = ({ children }) => {
         return;
       }
 
-    const token = localStorage.getItem("authToken");
-    const res = await axios.put(
-        `http://localhost:4000/api/cart/${entry._id}`,
-      { quantity: qty },
-      {
-        withCredentials: true,
-        headers: { Authorization: `Bearer ${token}` },
-      }
-    );
+      const token = localStorage.getItem("authToken");
+      const res = await axios.put(
+        `https://food-frenzy-backend.onrender.com/api/cart/${entry._id}`,
+        { quantity: qty },
+        {
+          withCredentials: true,
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
 
       dispatch({ type: "UPDATE_ITEM", payload: normalizeCartItem(res.data) });
     },
@@ -242,7 +242,7 @@ export const CartProvider = ({ children }) => {
   const clearCart = useCallback(async () => {
     const token = localStorage.getItem("authToken");
     await axios.post(
-      "http://localhost:4000/api/cart/clear",
+      "https://food-frenzy-backend.onrender.com/api/cart/clear",
       {},
       {
         withCredentials: true,

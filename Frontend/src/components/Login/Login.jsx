@@ -12,7 +12,7 @@ import { iconClass, inputBase } from "../../assets/dummydata";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-const url = "http://localhost:4000";
+const url = "https://food-frenzy-backend.onrender.com";
 
 function Login({ onLoginSuccess, onClose }) {
   const [showToast, setShowToast] = useState({
