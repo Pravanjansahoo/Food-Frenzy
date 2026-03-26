@@ -22,7 +22,10 @@ const __dirname = path.dirname(_filename);
 app.use(
   cors({
     origin: (origin, callback) => {
-      const allowedOrigins = ["http://localhost:5173", "http://localhost:5174"];
+      const allowedOrigins = [
+        "https://food-frenzy-frontend-rv10.onrender.com",
+        "https://food-frenzy-admin.onrender.com",
+      ];
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
