@@ -24,7 +24,7 @@
 .grid>div{
     animation: cardEntrance 0.6s ease-out forwards;
     opacity: 0;
-    background: #2a1e14;
+    /* background: #2a1e14; */
 }
 
 
