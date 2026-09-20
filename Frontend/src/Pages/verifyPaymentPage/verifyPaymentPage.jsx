@@ -3,7 +3,7 @@ import { useCart } from "../../CartContext/CartContext.jsx";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const verifyPaymentPage = () => {
+const VerifyPaymentPage = () => {
   const { clearCart } = useCart();
   const { search } = useLocation();
   const navigate = useNavigate();
@@ -53,4 +53,4 @@ const verifyPaymentPage = () => {
   );
 };
 
-export default verifyPaymentPage;
+export default VerifyPaymentPage;
