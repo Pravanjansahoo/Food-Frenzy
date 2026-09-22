@@ -120,7 +120,7 @@ const Footer = () => {
               target="_blank"
               className="text-lg font-sacramento bg-linear-to-r from-amber-400 via-amber-500 to-amber-400 bg-clip-text text-transparent hover:text-purple-300 transition-all duration-500"
             >
-              Designed by ASHUTOSH PANDA AND TEAM
+              Designed by Pravanjan Sahoo
             </a>
           </div>
         </div>
